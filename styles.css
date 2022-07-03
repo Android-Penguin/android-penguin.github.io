@@ -13,26 +13,26 @@ html, body {
     padding: 0;
     background-color: var(--backgroundColor);
 }
-/* Full screen container for text */
+/* Container for text */
 #text-container {
     position: absolute;
+    top: 50%;
+    left: 50%;
     z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    color: white;
-}
-/* Centred text container */
-#text-container > div {
+    transform: translate(-50%, -50%);
     /* display: flex; */
-    /* flex-direction: column; */
+    /* justify-content: center; */
     /* align-items: center; */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    color: white;
 }
 /* Main title container */
 #title-container {
     font-size: 6rem;
+}
+#title-container {
+    white-space: nowrap;
 }
 /* Divider */
 #text-container hr {
@@ -50,8 +50,14 @@ html, body {
 #links-container a:hover {
     opacity: 0.8;
 }
+/* Shrink text smaller screens */
+@media (max-width: 800px) {
+    :root {
+        font-size: 7px;
+    }
+}
 /* Resize on mobile */
-@media (max-width: 720px) {
+@media (max-width: 640px) {
     :root {
         font-size: 6px;
     }
